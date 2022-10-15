@@ -24,14 +24,12 @@ DB_CLUSTER=''
 
 populate the local DB:
 ```
-psql -h localhost -p 5432 -d database --username user -W < db.sql
-Password: password
+npm run loadpgdevdata
 ```
 
 ## Connect to local database
 ```postgres
-psql -h localhost -p 5432 -d database --username user -W
-Password: password
+npm run pgshell
 
 
 \dt
