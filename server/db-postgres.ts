@@ -1,6 +1,6 @@
 import {Pool} from 'pg';
 
-const connectionString = `postgresql://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_HOST}:${process.env.POSTGRES_PORT}/${process.env.POSTGRES_DB}${process.env.POSTGRES_OPTIONS}`,
+const connectionString = `postgresql://${process.env.POSTGRES_USER}:${process.env.POSTGRES_PASSWORD}@${process.env.POSTGRES_HOST}:${process.env.POSTGRES_PORT}/${process.env.NODE_ENV === 'production' ? `${process.env.DB_CLUSTER}.` : ''}${process.env.POSTGRES_DB}`,
     config = {
         connectionString,
         ssl: process.env.NODE_ENV === 'production',
