@@ -1,3 +1,4 @@
+import React from 'react';
 import {DataFromDb} from 'server/interfaces';
 import useSWR from 'swr';
 

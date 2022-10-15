@@ -7,7 +7,7 @@
         "dev": "nodemon",
         "build": "next build && tsc --project tsconfig.server.json",
         "start": "cross-env NODE_ENV=production node dist/index.js",
-        "lint": "next lint",
+        "lint": "npm run next lint",
         "loaddevdata": "docker exec -i mysql_container sh -c 'exec mysql database -uroot -p\"$MYSQL_ROOT_PASSWORD\"' < ./db.sql",
         "loadpgdevdata": "docker exec -i postgres_container sh -c 'exec psql database --username\"$POSTGRES_USER\" -p\"$POSTGRES_PORT\"' < ./db.sql",
         "mysql_shell": "docker exec -it mysql_container sh -c 'exec mysql database -uroot -p\"$MYSQL_PASSWORD\"'"
@@ -29,8 +29,10 @@
         "@types/pg": "^8.6.5",
         "@types/react": "^18.0.18",
         "@types/react-dom": "^18.0.6",
+        "@typescript-eslint/eslint-plugin": "^5.40.0",
         "eslint": "^8.24.0",
         "eslint-config-next": "12.3.1",
+        "eslint-plugin-testing-library": "^5.7.2",
         "nodemon": "^2.0.19",
         "ts-node": "^10.9.1",
         "typescript": "^4.7.4"
