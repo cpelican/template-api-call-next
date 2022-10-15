@@ -7,6 +7,7 @@
         "dev": "nodemon",
         "test": "jest",
         "pretty": "npx prettier --write .",
+        "prettier-check-and-fix": "/bin/bash scripts/prettier-check-and-fix.sh",
         "build": "next build && tsc --project tsconfig.server.json",
         "start": "cross-env NODE_ENV=production node dist/index.js",
         "lint": "npm run next lint",
@@ -20,7 +21,6 @@
         "dotenv": "^16.0.3",
         "next": "12.3.1",
         "pg": "^8.8.0",
-        "prettier": "^2.7.1",
         "react": "18.2.0",
         "react-dom": "18.2.0",
         "serverless-mysql": "^1.5.4",
@@ -39,8 +39,11 @@
         "eslint-plugin-testing-library": "^5.7.2",
         "jest": "^29.2.0",
         "nodemon": "^2.0.19",
+        "pre-commit": "^1.2.2",
+        "prettier": "^2.7.1",
         "ts-jest": "^29.0.3",
         "ts-node": "^10.9.1",
         "typescript": "^4.7.4"
-    }
+    },
+    "pre-commit": ["prettier-check-and-fix", "lint"]
 }
